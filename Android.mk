@@ -1,0 +1,42 @@
+LOCAL_PATH := $(my-dir)
+include $(CLEAR_VARS)
+
+LOCAL_SRC_FILES:= stringbench.c
+
+LOCAL_MODULE := stringbench
+
+LOCAL_MODULE_PATH := $(TARGET_OUT_OPTIONAL_EXECUTABLES)
+
+LOCAL_MODULE_TAGS := debug
+
+LOCAL_CFLAGS += -std=gnu99
+
+include $(BUILD_EXECUTABLE)
+
+include $(CLEAR_VARS)
+
+LOCAL_SRC_FILES:= harness.c
+
+LOCAL_MODULE := harness
+
+LOCAL_MODULE_PATH := $(TARGET_OUT_OPTIONAL_EXECUTABLES)
+
+LOCAL_MODULE_TAGS := debug
+
+LOCAL_CFLAGS += -std=gnu99
+
+include $(BUILD_EXECUTABLE)
+
+include $(CLEAR_VARS)
+
+LOCAL_SRC_FILES:= dhry_1.c dhry_2.c
+
+LOCAL_MODULE := dhry
+
+LOCAL_MODULE_PATH := $(TARGET_OUT_OPTIONAL_EXECUTABLES)
+
+LOCAL_MODULE_TAGS := debug
+
+LOCAL_CFLAGS += -I.
+
+include $(BUILD_EXECUTABLE)
