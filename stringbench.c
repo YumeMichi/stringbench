@@ -90,5 +90,25 @@ int main(int argc, char **argv) {
 	}
 	END("100000000 * strcpy of 15 bytes");
 
+	START;
+	for(int i=0; i<15000; i++) {
+		memset(tmp, 0, 15000);
+		for(int j=0; j<15000; j++) {
+			strcat(tmp, "a");
+		}
+	}
+	END("15000 * 15000 * strcat + 1 byte");
+
+	memset(l, 0, 15000);
+	memset(l, 'a', 1000);
+	START;
+	for(int i=0; i<15000; i++) {
+		memset(tmp, 0, 15000);
+		for(int j=0; j<15; j++) {
+			strcat(tmp, l);
+		}
+	}
+	END("15000 * 15 * strcat + 1000 bytes");
+
 	return 0;
 }
