@@ -338,7 +338,7 @@ int             Int_Glob;
    printf ("%10d\n", Arr_2_Glob[8][7]);
    
    printf ("Ptr_Glob->            ");
-   printf ("  Ptr_Comp:       *    %d\n", (int) Ptr_Glob->Ptr_Comp);
+   printf ("  Ptr_Comp:       *    %ld\n", (long) Ptr_Glob->Ptr_Comp);
    
    printf ("  Discr:       ");
    if (Ptr_Glob->Discr == 0)  printf ("O.K.  ");
@@ -364,7 +364,7 @@ int             Int_Glob;
    printf ("%s\n", Ptr_Glob->variant.var_1.Str_Comp);
    
    printf ("Next_Ptr_Glob->       "); 
-   printf ("  Ptr_Comp:       *    %d", (int) Next_Ptr_Glob->Ptr_Comp);
+   printf ("  Ptr_Comp:       *    %ld", (long) Next_Ptr_Glob->Ptr_Comp);
    printf (" same as above\n");
    
    printf ("  Discr:       ");
@@ -540,7 +540,7 @@ int             Int_Glob;
    fprintf (Ap, "%10d\n", Arr_2_Glob[8][7]);
    
    fprintf (Ap, "Ptr_Glob->  \n");
-   fprintf (Ap, "  Ptr_Comp:       *  %d\n", (int) Ptr_Glob->Ptr_Comp);
+   fprintf (Ap, "  Ptr_Comp:       *  %x\n", (long) Ptr_Glob->Ptr_Comp);
    
    fprintf (Ap, "  Discr:       ");
    if (Ptr_Glob->Discr == 0)  fprintf (Ap, "O.K.  ");
@@ -566,7 +566,7 @@ int             Int_Glob;
    fprintf (Ap, "%s\n", Ptr_Glob->variant.var_1.Str_Comp);
    
    fprintf (Ap, "Next_Ptr_Glob-> \n"); 
-   fprintf (Ap, "  Ptr_Comp:       *  %d", (int) Next_Ptr_Glob->Ptr_Comp);
+   fprintf (Ap, "  Ptr_Comp:       *  %x", (long) Next_Ptr_Glob->Ptr_Comp);
    fprintf (Ap, " same as above\n");
    
    fprintf (Ap, "  Discr:       ");

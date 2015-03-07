@@ -48,7 +48,7 @@
 #endif
 
 /** Make sure a function is called by using the return value */
-#define SPOIL(_x)  volatile int x = (int)(_x); (void)x
+#define SPOIL(_x)  volatile long x = (long)(_x); (void)x
 
 /** Type of functions that can be tested */
 typedef void (*stub_t)(void *dest, void *src, size_t n);
