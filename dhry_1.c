@@ -460,36 +460,36 @@ int             Int_Glob;
      {
         printf ("Enter the following which will be added with results to file DHRY.TXT\n");
         printf ("When submitting a number of results you need only provide details once\n");
-        printf ("but a cross reference such as an abbreviated CPU type would be useful.\n");    
+        printf ("but a cross reference such as an abbreviated CPU type would be useful.\n");
         printf ("You can kill (exit or close) the program now and no data will be added.\n\n");
-                
+
         printf ("PC Supplier/model     ? ");
-        gets(general[1]);
-    
+        fgets(general[1], 80, stdin);
+
         printf ("CPU chip              ? ");
-        gets(general[2]);
-    
+        fgets(general[3], 80, stdin);
+
         printf ("Clock MHz             ? ");
-        gets(general[3]);
-     
+        fgets(general[3], 80, stdin);
+
         printf ("Cache size            ? ");
-        gets(general[4]);
-     
+        fgets(general[4], 80, stdin);
+
         printf ("Chipset & H/W options ? ");
-        gets(general[5]);
-      
+        fgets(general[5], 80, stdin);
+
         printf ("OS/DOS version        ? ");
-        gets(general[6]);
-        
+        fgets(general[6], 80, stdin);
+
         printf ("Your name             ? ");
-        gets(general[7]);
-     
+        fgets(general[7], 80, stdin);
+
         printf ("Company/Location      ? ");
-        gets(general[8]);
-     
+        fgets(general[8], 80, stdin);
+
         printf ("E-mail address        ? ");
-        gets(general[0]);
-     } 
+        fgets(general[0], 80, stdin);
+     }
 /************************************************************************
  *                Add results to output file Dhry.txt                   *
  ************************************************************************/
