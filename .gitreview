@@ -1,0 +1,5 @@
+[gerrit]
+host=android-review.linaro.org
+port=29418
+project=platform/external/stringbench
+defaultbranch=master

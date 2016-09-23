@@ -38,7 +38,7 @@ include $(CLEAR_VARS)
 
 LOCAL_SRC_FILES:= dhry_1.c dhry_2.c
 
-LOCAL_MODULE := dhry
+LOCAL_MODULE := dhry-linaro
 
 LOCAL_MULTILIB := both
 LOCAL_MODULE_STEM_32 := $(LOCAL_MODULE)
