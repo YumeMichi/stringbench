@@ -13,6 +13,7 @@ LOCAL_MODULE_PATH := $(TARGET_OUT_OPTIONAL_EXECUTABLES)
 LOCAL_MODULE_TAGS := debug
 
 LOCAL_CFLAGS += -std=gnu99
+LOCAL_CFLAGS += "-D__unused=__attribute__((unused))"
 
 include $(BUILD_EXECUTABLE)
 
@@ -31,6 +32,7 @@ LOCAL_MODULE_PATH := $(TARGET_OUT_OPTIONAL_EXECUTABLES)
 LOCAL_MODULE_TAGS := debug
 
 LOCAL_CFLAGS += -std=gnu99
+LOCAL_CFLAGS += "-D__unused=__attribute__((unused))"
 
 include $(BUILD_EXECUTABLE)
 

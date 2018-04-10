@@ -77,7 +77,7 @@ static void empty(volatile char *against)
 }
 
 /** Stub that does nothing.  Used for calibrating */
-static void xbounce(void *dest, void *src, size_t n)
+static void xbounce(void *dest __unused, void *src __unused, size_t n __unused)
 {
   SPOIL(0);
 }
@@ -89,31 +89,31 @@ static void xmemcpy(void *dest, void *src, size_t n)
 }
 
 /** Stub that calls memset */
-static void xmemset(void *dest, void *src, size_t n)
+static void xmemset(void *dest, void *src __unused, size_t n)
 {
   SPOIL(memset(dest, 0, n));
 }
 
 /** Stub that calls strcpy */
-static void xstrcpy(void *dest, void *src, size_t n)
+static void xstrcpy(void *dest, void *src, size_t n __unused)
 {
   SPOIL(strcpy(dest, src));
 }
 
 /** Stub that calls strlen */
-static void xstrlen(void *dest, void *src, size_t n)
+static void xstrlen(void *dest, void *src __unused, size_t n __unused)
 {
   SPOIL(strlen(dest));
 }
 
 /** Stub that calls strcmp */
-static void xstrcmp(void *dest, void *src, size_t n)
+static void xstrcmp(void *dest, void *src, size_t n __unused)
 {
   SPOIL(strcmp(dest, src));
 }
 
 /** Stub that calls strchr */
-static void xstrchr(void *dest, void *src, size_t n)
+static void xstrchr(void *dest __unused, void *src, size_t n)
 {
   /* Put the character at the end of the string and before the null */
   ((char *)src)[n-1] = 32;
@@ -121,7 +121,7 @@ static void xstrchr(void *dest, void *src, size_t n)
 }
 
 /** Stub that calls memchr */
-static void xmemchr(void *dest, void *src, size_t n)
+static void xmemchr(void *dest __unused, void *src, size_t n)
 {
   /* Put the character at the end of the block */
   ((char *)src)[n-1] = 32;
@@ -139,7 +139,7 @@ static const struct test tests[] =
     { "strcmp", xstrcmp },
     { "strcpy", xstrcpy },
     { "strlen", xstrlen },
-    { NULL }
+    { NULL, NULL }
   };
 
 /** Show basic usage */

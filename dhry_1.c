@@ -114,7 +114,7 @@ int             Int_Glob;
  /* end of variables for time measurement */
  
  
- void main (int argc, char *argv[])
+ int main (int argc, char *argv[])
  /*****/
  
    /* main program, corresponds to procedures        */
@@ -131,7 +131,7 @@ int             Int_Glob;
          Str_30      Str_2_Loc;
    REG   int         Run_Index;
    REG   int         Number_Of_Runs; 
-         int         endit, count = 10;
+         int         /*endit, */count = 10;
          FILE        *Ap;
          char        general[9][80] = {" "};
  
@@ -540,7 +540,7 @@ int             Int_Glob;
    fprintf (Ap, "%10d\n", Arr_2_Glob[8][7]);
    
    fprintf (Ap, "Ptr_Glob->  \n");
-   fprintf (Ap, "  Ptr_Comp:       *  %x\n", (long) Ptr_Glob->Ptr_Comp);
+   fprintf (Ap, "  Ptr_Comp:       *  %lx\n", (long) Ptr_Glob->Ptr_Comp);
    
    fprintf (Ap, "  Discr:       ");
    if (Ptr_Glob->Discr == 0)  fprintf (Ap, "O.K.  ");
@@ -566,7 +566,7 @@ int             Int_Glob;
    fprintf (Ap, "%s\n", Ptr_Glob->variant.var_1.Str_Comp);
    
    fprintf (Ap, "Next_Ptr_Glob-> \n"); 
-   fprintf (Ap, "  Ptr_Comp:       *  %x", (long) Next_Ptr_Glob->Ptr_Comp);
+   fprintf (Ap, "  Ptr_Comp:       *  %lx", (long) Next_Ptr_Glob->Ptr_Comp);
    fprintf (Ap, " same as above\n");
    
    fprintf (Ap, "  Discr:       ");
@@ -654,6 +654,8 @@ int             Int_Glob;
         printf("Press any key to exit\n");
         printf ("\nIf this is displayed you must close the window in the normal way\n");    
      }
+
+    return 0;
  }
  
  

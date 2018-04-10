@@ -6,7 +6,7 @@
 #define START gettimeofday(&tv1, 0);
 #define END(x) gettimeofday(&tv2, 0); t1 = ((double)tv1.tv_sec)+((double)tv1.tv_usec)/1000000.0; t2 = ((double)tv2.tv_sec)+((double)tv2.tv_usec)/1000000.0; printf("%s: %f seconds\n", x, t2-t1)
 
-int main(int argc, char **argv) {
+int main(int argc __unused, char **argv __unused) {
 	struct timeval tv1, tv2;
 	double t1, t2;
 	char * const s = (char * const) malloc(16);
