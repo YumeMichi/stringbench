@@ -1,0 +1,79 @@
+cc_binary {
+    name: "stringbench",
+
+    srcs: ["stringbench.c"],
+
+    compile_multilib: "both",
+    multilib: {
+//        lib32: {
+//            suffix: "32",
+//        },
+        lib64: {
+            suffix: "64",
+        },
+    },
+
+    // ANDROIDMK TRANSLATION ERROR: unsupported assignment to LOCAL_MODULE_PATH
+    // LOCAL_MODULE_PATH := $(TARGET_OUT_OPTIONAL_EXECUTABLES)
+
+    cflags: [
+        "-std=gnu99",
+        "-D__unused=__attribute__((unused))"
+    ],
+
+    vendor: true,
+}
+
+cc_binary {
+    name: "harness",
+
+    srcs: ["harness.c"],
+
+    compile_multilib: "both",
+    multilib: {
+ //       lib32: {
+ //           suffix: "32",
+ //       },
+        lib64: {
+            suffix: "64",
+        },
+    },
+
+    // ANDROIDMK TRANSLATION ERROR: unsupported assignment to LOCAL_MODULE_PATH
+    // LOCAL_MODULE_PATH := $(TARGET_OUT_OPTIONAL_EXECUTABLES)
+
+    cflags: [
+        "-std=gnu99",
+        "-D__unused=__attribute__((unused))"
+    ],
+
+    vendor: true,
+}
+
+cc_binary {
+    name: "dhry-linaro",
+
+    srcs: [
+        "dhry_1.c",
+        "dhry_2.c",
+    ],
+
+    compile_multilib: "both",
+    multilib: {
+    //    lib32: {
+    //        suffix: "32",
+    //    },
+        lib64: {
+            suffix: "64",
+        },
+    },
+
+    // ANDROIDMK TRANSLATION ERROR: unsupported assignment to LOCAL_MODULE_PATH
+    // LOCAL_MODULE_PATH := $(TARGET_OUT_OPTIONAL_EXECUTABLES)
+
+//    cflags: [
+//        "-I."
+//    ],
+//  local_include_dirs: ["."]
+    vendor: true,
+}
